@@ -19,6 +19,10 @@ public class Body extends BaseComponent {
         this.height = height;
     }
 
+    public Body(Body copyFrom) {
+        this(copyFrom.getX(), copyFrom.getY(), copyFrom.getWidth(), copyFrom.getHeight());
+    }
+
     public void setX(float x) {
         this.x = x;
     }

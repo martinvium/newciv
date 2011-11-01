@@ -35,4 +35,11 @@ public class EntityFactory {
         entitySystem.addComponent(id, new Sprite(sprite));
         return entitySystem.getEntity(id);
     }
+
+    public Entity getCity(Body body) {
+        String id = entitySystem.newEntityId();
+        entitySystem.addComponent(id, new Body(body));
+        entitySystem.addComponent(id, new Sprite("assets/sprites/city.png"));
+        return entitySystem.getEntity(id);
+    }
 }

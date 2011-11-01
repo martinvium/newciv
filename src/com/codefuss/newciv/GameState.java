@@ -5,6 +5,7 @@ import com.codefuss.newciv.actions.MoveDown;
 import com.codefuss.newciv.actions.MoveLeft;
 import com.codefuss.newciv.actions.MoveRight;
 import com.codefuss.newciv.actions.MoveUp;
+import com.codefuss.newciv.actions.SettleCity;
 import com.codefuss.newciv.components.Body;
 import com.codefuss.newciv.components.Sprite;
 import com.codefuss.newciv.entitysystem.Entity;
@@ -43,6 +44,7 @@ public class GameState extends BasicGameState {
             gameFactory.getInputManager().mapToKey(new MoveRight(e), Input.KEY_RIGHT);
             gameFactory.getInputManager().mapToKey(new MoveDown(e), Input.KEY_DOWN);
             gameFactory.getInputManager().mapToKey(new MoveUp(e), Input.KEY_UP);
+            gameFactory.getInputManager().mapToKey(new SettleCity(e, gameFactory.getEntityFactory()), Input.KEY_B);
         }
 
         container.setMaximumLogicUpdateInterval(100);
