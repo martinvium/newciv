@@ -1,6 +1,6 @@
 package com.codefuss.newciv;
 
-import com.codefuss.newciv.components.Sprite;
+import com.codefuss.newciv.components.Body;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.geom.Vector2f;
 
@@ -10,7 +10,7 @@ import org.newdawn.slick.geom.Vector2f;
 public class Camera {
 
     Vector2f position = new Vector2f();
-    Sprite lookAt;
+    Body lookAt;
     GameMap map;
 
     public Camera(GameMap map) {
@@ -25,7 +25,7 @@ public class Camera {
         return position.y;
     }
 
-    public void lookAt(Sprite sprite) {
+    public void lookAt(Body sprite) {
         lookAt = sprite;
     }
 

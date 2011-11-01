@@ -1,6 +1,7 @@
 package com.codefuss.newciv;
 
 import com.codefuss.newciv.actions.Action;
+import com.codefuss.newciv.components.Body;
 import com.codefuss.newciv.components.Sprite;
 import com.codefuss.newciv.entitysystem.Entity;
 import com.codefuss.newciv.factories.GameFactory;
@@ -18,23 +19,21 @@ public class GameState extends BasicGameState {
     static public final int ID = 1;
     static final int PLAYER_WIDTH = 128;
     GameFactory gameFactory;
-    Entity player;
 
     @Override
     public int getID() {
         return ID;
     }
 
-    public Entity getPlayer() {
-        return player;
-    }
-
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         gameFactory = new GameFactory(Game.getProperties(), container.getInput());
 
-        player = gameFactory.getEntityFactory().getPlayer();
-        gameFactory.getCamera().lookAt(player.getComponent(Sprite.class));
+        gameFactory.getMap().initUnits();
+
+        for(Sprite spriteComponent : gameFactory.getEntitySystem().getComponents(Sprite.class)) {
+            gameFactory.getCamera().lookAt(spriteComponent.getEntity().getComponent(Body.class));
+        }
 
         container.setMaximumLogicUpdateInterval(100);
         container.setDefaultFont(gameFactory.getLabelFont());
