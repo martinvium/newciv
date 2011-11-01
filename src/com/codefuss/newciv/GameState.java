@@ -1,6 +1,10 @@
 package com.codefuss.newciv;
 
 import com.codefuss.newciv.actions.Action;
+import com.codefuss.newciv.actions.MoveDown;
+import com.codefuss.newciv.actions.MoveLeft;
+import com.codefuss.newciv.actions.MoveRight;
+import com.codefuss.newciv.actions.MoveUp;
 import com.codefuss.newciv.components.Body;
 import com.codefuss.newciv.components.Sprite;
 import com.codefuss.newciv.entitysystem.Entity;
@@ -8,6 +12,7 @@ import com.codefuss.newciv.factories.GameFactory;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.BasicGameState;
 
@@ -32,7 +37,12 @@ public class GameState extends BasicGameState {
         gameFactory.getMap().initUnits();
 
         for(Sprite spriteComponent : gameFactory.getEntitySystem().getComponents(Sprite.class)) {
-            gameFactory.getCamera().lookAt(spriteComponent.getEntity().getComponent(Body.class));
+            Entity e = spriteComponent.getEntity();
+            gameFactory.getCamera().lookAt(e.getComponent(Body.class));
+            gameFactory.getInputManager().mapToKey(new MoveLeft(e), Input.KEY_LEFT);
+            gameFactory.getInputManager().mapToKey(new MoveRight(e), Input.KEY_RIGHT);
+            gameFactory.getInputManager().mapToKey(new MoveDown(e), Input.KEY_DOWN);
+            gameFactory.getInputManager().mapToKey(new MoveUp(e), Input.KEY_UP);
         }
 
         container.setMaximumLogicUpdateInterval(100);
@@ -45,9 +55,9 @@ public class GameState extends BasicGameState {
             action.invoke();
         }
 
-        for (Sprite component : gameFactory.getEntitySystem().getComponents(Sprite.class)) {
+        /*for (Sprite component : gameFactory.getEntitySystem().getComponents(Sprite.class)) {
             component.render();
-        }
+        }*/
 
         gameFactory.getCamera().update(container);
     }
@@ -59,7 +69,7 @@ public class GameState extends BasicGameState {
         gameFactory.getMap().render(-camera.getX(), -camera.getY());
 
         for (Sprite component : gameFactory.getEntitySystem().getComponents(Sprite.class)) {
-            component.render();
+            component.render(gameFactory.getCamera());
         }
     }
 }

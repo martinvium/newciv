@@ -16,6 +16,6 @@ abstract public class BaseAction implements Action {
 
     @Override
     public boolean test(Input input, int keyCode, int delta) {
-        return input.isKeyDown(keyCode);
+        return input.isKeyPressed(keyCode);
     }
 }

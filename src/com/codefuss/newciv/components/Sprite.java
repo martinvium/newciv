@@ -1,5 +1,6 @@
 package com.codefuss.newciv.components;
 
+import com.codefuss.newciv.Camera;
 import com.codefuss.newciv.entitysystem.BaseComponent;
 import org.newdawn.slick.Image;
 
@@ -14,8 +15,8 @@ public class Sprite extends BaseComponent {
         this.image = image;
     }
 
-    public void render() {
+    public void render(Camera camera) {
         Body body = getComponent(Body.class);
-        image.draw(body.getX(), body.getY());
+        image.draw(body.getX() - camera.getX(), body.getY() - camera.getY());
     }
 }

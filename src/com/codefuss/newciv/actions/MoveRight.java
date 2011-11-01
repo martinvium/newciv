@@ -1,5 +1,6 @@
 package com.codefuss.newciv.actions;
 
+import com.codefuss.newciv.components.Body;
 import com.codefuss.newciv.entitysystem.Entity;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,8 +16,8 @@ public class MoveRight extends BaseAction {
 
     @Override
     public Collection<Entity> invoke() {
-        //creature.setState(Sprite.State.WALKING);
-        //creature.setVelocityX(creature.getSpeedX());
+        Body body = creature.getComponent(Body.class);
+        body.setX(body.getX() + 32);
         return new ArrayList<Entity>();
     }
 }
