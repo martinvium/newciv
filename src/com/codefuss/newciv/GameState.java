@@ -33,6 +33,7 @@ public class GameState extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         gameFactory = new GameFactory(Game.getProperties(), container.getInput());
 
+        player = gameFactory.getEntityFactory().getPlayer();
         gameFactory.getCamera().lookAt(player.getComponent(Sprite.class));
 
         container.setMaximumLogicUpdateInterval(100);

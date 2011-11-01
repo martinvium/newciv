@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.codefuss.newciv;
 
 import com.codefuss.newciv.components.Sprite;
@@ -9,7 +5,6 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.geom.Vector2f;
 
 /**
- *
  * @author Martin Vium <martin.vium@gmail.com>
  */
 public class Camera {

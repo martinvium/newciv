@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="environment" tilewidth="32" tileheight="32">
+  <image source="../sprites/settler.png" trans="ff00ff" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="2" name="environment" tilewidth="32" tileheight="32">
+  <image source="../sprites/environment.png" trans="ff00ff" width="224" height="32"/>
+ </tileset>
+ <layer name="ground" width="32" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC72XQRKFIAxDGb8i9z+xW34nTdPWcdFxA7zApAGPMcax1e+DOkCpc69kqRo6jI4Wy7dzpilv7VXUwPZumUjD6XDurZgOtnelEP8W+FeRr5yz5d/OfORtu/65lXomjM+8gM6W8ZkfK16M+FbHNGORPtY7SrYwDVFPIi1Z/2XOIOqLqv8jPtLA+Er+rPHfCxkfonELsKP8Q/tZhOuxmec694+y76/5dozNM+8ORvyot7L5w94ACp95n90L1feHzTc1g7vvL7s289Vscj3+NPxdx67H62uVG72/Ir6y9zf4LINVj2X5a/t+xUdnwPio797QUHkPIQ0dfiaL3+Cz/7Bqzmb5qoYoa6rsSEOmOvyOhgzjAdRtbUUAEAAA
+  </data>
+ </layer>
+ <layer name="resources" width="32" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ8HFAAAAPBuEQAcxwAQAAA=
+  </data>
+ </layer>
+ <objectgroup name="objects" width="32" height="32" visible="0"/>
+</map>

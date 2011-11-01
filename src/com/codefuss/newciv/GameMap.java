@@ -1,16 +1,12 @@
 package com.codefuss.newciv;
 
-import com.codefuss.newciv.entitysystem.Entity;
 import com.codefuss.newciv.factories.EntityFactory;
-import java.util.ArrayList;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.tiled.TiledMap;
 import org.newdawn.slick.util.pathfinding.PathFindingContext;
 import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
 /**
- *
  * @author Martin Vium <martin.vium@gmail.com>
  */
 public final class GameMap implements TileBasedMap {

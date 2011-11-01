@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.codefuss.newciv;
 
 import java.io.FileInputStream;
@@ -28,7 +24,7 @@ public class Game extends StateBasedGame {
 
     public static Properties getProperties() {
         if (props == null) {
-            props = loadProperties("config.properties");
+            props = loadProperties("src/com/codefuss/newciv/config.properties");
         }
         return props;
     }

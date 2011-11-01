@@ -1,7 +1,6 @@
 package com.codefuss.newciv.entitysystem;
 
 /**
- *
  * @author Martin Vium <martin.vium@gmail.com>
  */
 public interface Component

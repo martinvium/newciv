@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.codefuss.newciv;
 
 import com.codefuss.newciv.actions.Action;
@@ -11,7 +7,6 @@ import java.util.HashMap;
 import org.newdawn.slick.Input;
 
 /**
- *
  * @author Martin Vium <martin.vium@gmail.com>
  */
 public class InputManager {

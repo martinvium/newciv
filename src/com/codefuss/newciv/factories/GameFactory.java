@@ -43,7 +43,7 @@ public class GameFactory {
 
     public EntityFactory getEntityFactory() {
         if (entityFactory == null) {
-            entityFactory = new EntityFactory();
+            entityFactory = new EntityFactory(getEntitySystem());
         }
         return entityFactory;
     }
